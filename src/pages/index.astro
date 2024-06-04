@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LinkButton from '../components/LinkButton.astro';
+import cv from '../assets/cv-victoralban.pdf';
 ---
 
 <Layout title="👷 ¡En construcción! 🧱">
@@ -30,12 +31,7 @@ import LinkButton from '../components/LinkButton.astro';
               proporcionados.
             </p>
 
-            <a
-              class="download-button"
-              href="mi-cv.pdf"
-              download="cv-victoralban.pdf"
-              role="button"
-            >
+            <a class="download-button" href={cv} download role="button">
               Descargar CV
             </a>
           </aside>
