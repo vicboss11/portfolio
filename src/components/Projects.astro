@@ -1,0 +1,48 @@
+---
+import { TAGS } from '@/constants/constants';
+import ProjectItem from './ProjectItem.astro';
+
+const PROJECTS = [
+  {
+    title: 'GameNews - Las Últimas Noticias de Videojuegos en un Solo Lugar',
+    description:
+      'Explora las noticias más recientes del mundo de los videojuegos y mantente al día con las novedades de tus juegos favoritos. Creado desde cero con Astro, ReactJS y NestJS',
+    image: '/projects/gamenews.webp',
+    imageAlt: 'Imagen de previsualización de GameNews',
+    tags: [
+      TAGS.ASTRO,
+      TAGS.REACTJS,
+      TAGS.NESTJS,
+      TAGS.SCSS,
+      TAGS.TYPESCRIPT,
+      TAGS.WORDPRESS,
+    ],
+    link: 'https://gamenewshub.es/',
+    github: 'https://github.com/vicboss11/gamenews/',
+  },
+  {
+    title:
+      'Damas-io - El Juego de las Damas Como Nunca Antes lo Habías Visto (En Desarrollo)',
+    description:
+      'Juega al clásico juego de las damas en tiempo real con tus amigos o con jugadores de todo el mundo, o desde tu dispositivo en modo local. Creado desde cero con ReactJS',
+    image: '/projects/damas-io.webp',
+    imageAlt: 'Imagen de previsualización de Damas-io',
+    tags: [TAGS.REACTJS, TAGS.TYPESCRIPT, TAGS.SCSS],
+    link: 'https://dev.damas-io.com/play/',
+    github: 'https://github.com/vicboss11/checkers/',
+  },
+  {
+    title: 'ApeSoftware - La Imaginación en Funcionamiento',
+    description:
+      'Página web de muestra de una empresa de desarrollo de software con un moderno diseño (versión de escritorio). Creado desde cero con ReactJS, JavaScript y SCSS',
+    image: '/projects/apesoftware.webp',
+    imageAlt: 'Imagen de previsualización de ApeSoftware',
+    tags: [TAGS.REACTJS, TAGS.JAVASCRIPT, TAGS.SCSS],
+    link: 'https://ape-software.pages.dev/',
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {PROJECTS.map((project) => <ProjectItem {...project} />)}
+</div>

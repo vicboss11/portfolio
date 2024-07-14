@@ -1,160 +1,58 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import LinkButton from '../components/LinkButton.astro';
-import cv from '../assets/cv-victoralban.pdf';
+import Layout from '@/layouts/Layout.astro';
+
+import AboutMe from '@/components/AboutMe.astro';
+import BriefcaseIcon from '@/components/icons/Briefcase.astro';
+import CodeIcon from '@/components/icons/Code.astro';
+import Experience from '@/components/Experience.astro';
+import ProfileCheckIcon from '@/components/icons/ProfileCheck.astro';
+import Projects from '@/components/Projects.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import Hero from '@/components/Hero.astro';
 ---
 
-<Layout title="👷 ¡En construcción! 🧱">
-  <main>
-    <section>
-      <h1 class="text-gradient">¡Vuelve pronto!</h1>
+<Layout
+  title="Porfolio de Víctor Albán - Desarrollador Web con +2 años de experiencia"
+  description="Contrata a Víctor Albán para crear tu aplicación web. Desarrollador Web especializado en crear aplicaciones únicas."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
 
-      <article>
-        <section class="instructions">
-          <p>
-            Mi sitio web aún está en construcción, pero estoy trabajando duro
-            para que esté listo cuanto antes. Mientras tanto, puedes
-            <strong>
-              descargar mi CV, seguirme en Github o contactarme a través de
-              LinkedIn.
-            </strong>
-          </p>
-        </section>
+    <div class="space-y-24">
+      <SectionContainer id="experiencia">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <BriefcaseIcon class="size-8" />
+          Experiencia laboral
+        </h2>
 
-        <section class="contact-links">
-          <aside class="flex flex-col justify-center">
-            <p class="alert">
-              Por razones de privacidad, el CV no incluye información personal
-              como mi dirección o número de teléfono. Si necesitas más
-              información, no dudes en contactarme por medio de los enlaces
-              proporcionados.
-            </p>
+        <Experience />
+      </SectionContainer>
 
-            <a class="download-button" href={cv} download role="button">
-              Descargar CV
-            </a>
-          </aside>
+      <SectionContainer id="proyectos">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <CodeIcon class="size-7" />
+          Proyectos
+        </h2>
 
-          <aside class="flex flex-wrap justify-center items-center m-4 gap-4">
-            <LinkButton
-              href="https://www.linkedin.com/in/victor-alban/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="ti ti-brand-linkedin icon"></i>LinkedIn
-            </LinkButton>
+        <Projects />
+      </SectionContainer>
 
-            <LinkButton
-              href="https://github.com/vicboss11/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="ti ti-brand-github icon"></i>Github
-            </LinkButton>
+      <SectionContainer id="sobre-mi">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        >
+          <ProfileCheckIcon class="size-8" />
+          Sobre mí
+        </h2>
 
-            <LinkButton
-              href="https://codepen.io/VicBoss11/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="ti ti-brand-codepen icon"></i>Codepen
-            </LinkButton>
-          </aside>
-        </section>
-      </article>
-    </section>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  section {
-    margin-top: 3rem;
-  }
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-
-  .alert {
-    color: rgba(var(--accent-light), 80%);
-
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-align: center;
-  }
-
-  .download-button {
-    display: block;
-
-    width: fit-content;
-    margin: 2rem auto;
-    padding: 0.5rem;
-
-    border-radius: 0.5rem;
-
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-
-    font-weight: 500;
-
-    transition: all 200ms ease-in-out;
-
-    cursor: pointer;
-  }
-
-  .download-button:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
-
-  .icon {
-    display: grid;
-    place-content: center;
-
-    width: 2.5rem;
-    height: 2.5rem;
-
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-</style>

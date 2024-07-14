@@ -1,0 +1,47 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+  {
+    date: 'Septiembre 2022 - Enero 2023',
+    title: 'Desarrollador Frontend',
+    company: 'NTT DATA Europe & Latam',
+    description: `
+      <ul class="list-disc">
+        <li>Trabajo en un proyecto para gestionar la documentación de una importante empresa del sector energético.</li>
+        <li>Angular como framework principal para el desarrollo de la aplicación en el Frontend.</li>
+        <li>Implemento tests unitarios con Jasmine para asegurar la calidad del código y la funcionalidad de la aplicación.</li>
+        <li>Participo en revisiones de código y sesiones de mejora continua para optimizar el rendimiento y la seguridad de la aplicación.</li>
+        <li>Apoyo a nuevas incorporaciones al equipo, proporcionando orientación, formación y asistencia técnica para facilitar su integración y eficiencia en el proyecto.</li>
+      </ul>
+    `,
+  },
+  {
+    date: 'Marzo 2020 - Noviembre 2021',
+    title: 'Desarrollador Fullstack',
+    company: 'Roams',
+    description: `
+      <ul class="list-disc">
+        <li>Creo y mantengo el CMS que provee de contenido las webs principales, utilizando Angular combinado con librerías como PrimeNG.</li>
+        <li>Maqueto y añado nuevas funcionalidades en la web de roams.es, de naturaleza multisite, utilizando técnicas de postprocesado y renderizado desde el servidor.</li>
+        <li>Desarrollo un conversor de archivos docx a HTML para facilitar el trabajo del departamento de contenido. Implementado en Python (Flask).</li>
+        <li>Implemento un AWS Lambda para redirigir enlaces de la web roams.es.</li>
+        <li>Programo distintas APIs REST con PHP (Symfony) y Python, principalmente.</li>
+        <li>Optimizo el proceso de despliegue de los distintos proyectos, utilizando Jenkins para el control y activación del despliegue.</li>
+        <li>Participo en la creación de contenedores de ejecución con Docker.</li>
+        <li>Git como sistema de control de versiones.</li>
+      </ul>
+    `,
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experiencie) => (
+      <li>
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
