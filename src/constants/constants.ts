@@ -22,7 +22,7 @@ export const TAGS = {
   },
   ASTRO: {
     name: 'Astro',
-    class: 'bg-[#23262F] text-[#E03775]',
+    class: 'bg-[#23262F] text-[#7C4DFF]',
     classText: 'text-white',
     icon: AstroIcon,
   },
