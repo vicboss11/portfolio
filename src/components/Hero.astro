@@ -1,4 +1,5 @@
 ---
+const personalImageSrc = '/me-alt.webp';
 const personalImageAlt = 'Víctor Albán';
 const linkedinUrl = 'https://linkedin.com/in/victor-alban/';
 const githubUrl = 'https://github.com/vicboss11/';
@@ -16,8 +17,10 @@ import SocialPill from '@/components/SocialPill.astro';
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/me.webp"
+      src={personalImageSrc}
       alt={personalImageAlt}
+      width="64"
+      height="64"
     />
 
     <a
