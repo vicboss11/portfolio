@@ -26,6 +26,25 @@ const { title, description } = Astro.props;
 
     <title>{title}</title>
 
+    <script
+      is:inline
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN8SHWCYSY"
+    ></script>
+
+    <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-BN8SHWCYSY');
+    </script>
+
     <ViewTransitions />
   </head>
 
