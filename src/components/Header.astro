@@ -1,5 +1,7 @@
 ---
-const linkedInUrl = 'https://linkedin.com/in/victor-alban/';
+const contactUrl = 'mailto:trabajo.victoralban@gmail.com';
+const anchorBaseCss =
+  'relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400';
 
 import ThemeToggle from './ThemeToggle.astro';
 
@@ -8,21 +10,25 @@ const navItems = [
     title: 'Experiencia',
     label: 'experiencia',
     url: '/#experiencia',
+    cssClass: anchorBaseCss,
   },
   {
     title: 'Proyectos',
     label: 'proyectos',
     url: '/#proyectos',
+    cssClass: anchorBaseCss,
   },
   {
     title: 'Sobre mí',
     label: 'sobre-mi',
     url: '/#sobre-mi',
+    cssClass: anchorBaseCss,
   },
   {
     title: 'Contacto',
     label: 'contacto',
-    url: linkedInUrl,
+    url: contactUrl,
+    cssClass: anchorBaseCss + ' hover:underline mr-5',
   },
 ];
 ---
@@ -35,15 +41,12 @@ const navItems = [
   >
     {
       navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
+        <a class={link.cssClass} aria-label={link.label} href={link.url}>
           {link.title}
         </a>
       ))
     }
+
     <ThemeToggle />
   </nav>
 </header>
